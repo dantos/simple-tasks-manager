@@ -25,6 +25,8 @@ Populate the database
 
 - run `php artisan serve`
 
+Or, use docker alongside laravel sail: https://laravel.com/docs/10.x/installation#laravel-and-docker
+
 ## Go to the main page
 
 http://localhost:8000
