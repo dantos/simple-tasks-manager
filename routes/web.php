@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+	use App\Http\Controllers\TasksController;
+	use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('tasks.index');
+    return redirect(route('tasks.index'));
 });
+
+Route::resource('tasks', TasksController::class)->except('show');
+Route::post('task/{task}/priority/update',[TasksController::class, 'updateTaskPriority'] )->name('task.priority.update');
